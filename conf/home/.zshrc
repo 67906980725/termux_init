@@ -184,6 +184,7 @@ create_service() {
   ln -sf $PREFIX/share/termux-services/svlogger $dir_path/log/run
 
   echo '#!/data/data/com.termux/files/usr/bin/sh' > run
+  echo 'termux-wake-lock' >> run
   echo 'exec 2>&1' >> run
   if [ "$work_dir" != "" ]; then
     echo "cd '"$work_dir"'" >> run
