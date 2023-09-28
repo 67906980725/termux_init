@@ -2,7 +2,11 @@
 
 apt update
 apt upgrade -y
-pkg install termux-api
+# https://wiki.termux.com/wiki/Termux-services
+# https://blog.csdn.net/YiBYiH/article/details/127294017 
+# $PREFIX/var/service/<your_service_name> 
+# 创建 service 后如果启动服务报错就重启 termux, 启动服务后如果没生效就重启设备
+pkg install -y termux-api termux-services
 termux-setup-storage
 echo "请在应用权限管理中手动给予termux存储权限"
 

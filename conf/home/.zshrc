@@ -171,3 +171,26 @@ sshh() {
 export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER=`which aarch64-linux-android-gcc`
 export CFLAGS="-pie"
 export CARGO_BUILD_TARGET=aarch64-linux-android
+
+create_service() {
+  svc_name="$1"
+  cmd="$2"
+  work_dir="$3"
+
+  dir_path="$PREFIX/var/service/$svc_name"
+  mkdir -p "$dir_path"
+  cd "$dir_path"
+  mkdir log
+  ln -sf $PREFIX/share/termux-services/svlogger $dir_path/log/run
+
+  echo '#!/data/data/com.termux/files/usr/bin/sh' > run
+  echo 'exec 2>&1' >> run
+  if [ "$work_dir" != "" ]; then
+    echo "cd '"$work_dir"'" >> run
+  fi
+  echo "exec '"$cmd"' 2>&1" >> run
+  chmod +x run
+
+  sv-enable "$svc_name"
+  sv up "$svc_name"
+}
