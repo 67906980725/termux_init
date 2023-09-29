@@ -14,16 +14,14 @@ install_nerd() {
     tar -Jxvf "$font_pkg" -C "$target_dir"
   fi
   rm -f "$font_pkg"
-
-  fc-cache -f -v
 }
 
-set_font() {
+set_nerd_font() {
   font_name="$1"
-  echo "font.ttf=/storage/emulated/0/fonts/$font_name.ttf" > ~/.termux/font.ttf
+  cp /storage/emulated/0/fonts/$font_name.ttf ~/.termux/font.ttf
 }
+
 # install_nerd JetBrainsMono
 install_nerd SourceCodePro
-set_font "SauceCodeProNerdFontMono-Regular"
+set_nerd_font "SourceCodePro/SauceCodeProNerdFontMono-Regular"
 
-fc-cache -fv
