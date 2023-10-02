@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-px="https://git.xfj0.cn/"
-
+GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.com/}"
 check_parent()
 {
     file="$1"

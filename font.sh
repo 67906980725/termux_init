@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-nerd_ver="3.0.2"
+source ./cp_conf.sh
 
-GITHUB_PROXY="${GITHUB_PROXY:-https://ghproxy.com/}"
+nerd_ver="3.0.2"
 
 # https://github.com/ryanoasis/nerd-fonts
 install_nerd() {
