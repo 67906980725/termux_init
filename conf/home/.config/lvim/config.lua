@@ -10,8 +10,8 @@ vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying me
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 
 -- use treesitter folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- 缩进使用两个空格
 vim.opt.shiftwidth = 2
