@@ -127,38 +127,38 @@ export PATH=$SCRIPT_PATH:$BIN_PATH:$_LD_LIBRARY_PATH:/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=${HOME}/.local/lib:$LD_LIBRARY_PATH
 
 
-alias ls="exa --color=auto --icons";
-alias la="ls -a";
-alias l="ls -l";
-alias lla="ls -al";
-alias lt="ls --tree";
-alias h="cd ~";
-alias c="clear";
-alias b="cd ../";
-alias bb="cd ../../";
-alias bbb="cd ../../../";
-alias bbbb="cd ../../../../";
-alias bbbbb="cd ../../../../../";
-alias bbbbbb="cd ../../../../../../";
-alias bbbbbbb="cd ../../../../../../../";
-alias bbbbbbbb="cd ../../../../../../../../";
-alias bbbbbbbbb="cd ../../../../../../../../../";
-alias bbbbbbbbbb="cd ../../../../../../../../../../";
-#alias cat="bat --color always --plain"; # gnome 终端白色背景时看不到字
-alias grep="grep --color=auto";
-alias v="nvim";
+alias ls="exa --color=auto --icons"
+alias la="ls -a"
+alias l="ls -l"
+alias lla="ls -al"
+alias lt="ls --tree"
+alias h="cd ~"
+alias c="clear"
+alias b="cd ../"
+alias bb="cd ../../"
+alias bbb="cd ../../../"
+alias bbbb="cd ../../../../"
+alias bbbbb="cd ../../../../../"
+alias bbbbbb="cd ../../../../../../"
+alias bbbbbbb="cd ../../../../../../../"
+alias bbbbbbbb="cd ../../../../../../../../"
+alias bbbbbbbbb="cd ../../../../../../../../../"
+alias bbbbbbbbbb="cd ../../../../../../../../../../"
+#alias cat="bat --color always --plain" # gnome 终端白色背景时看不到字
+alias grep="grep --color=auto"
+alias v="nvim"
 
 # cdls()
 # {
 #   cd "$1" && echo $(pwd) && exa --color=auto --icons -a
 # }
-# alias cd="cdls";
+# alias cd="cdls"
 # zls()
 # {
 #   z "$1"
 #   cdls
 # }
-# alias z="zls";
+# alias z="zls"
 
 sshh() {
 	sshd
