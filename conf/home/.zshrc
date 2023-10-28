@@ -172,19 +172,20 @@ export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER=`which aarch64-linux-android-gc
 export CFLAGS="-pie"
 export CARGO_BUILD_TARGET=aarch64-linux-android
 
+
 create_service() {
-  svc_name="$1"
-  cmd="$2"
-  work_dir="$3"
+  svc_name="$1" cmd="$2" work_dir="$3"
+
+  work_dir=$(pwd)
 
   dir_path="$PREFIX/var/service/$svc_name"
-  mkdir -p "$dir_path"
+
+  mkdir -p "$dir_path/log"
   cd "$dir_path"
-  mkdir log
   ln -sf $PREFIX/share/termux-services/svlogger $dir_path/log/run
 
   echo '#!/data/data/com.termux/files/usr/bin/sh' > run
-  echo 'termux-wake-lock' >> run
+  #echo 'termux-wake-lock' >> run
   echo 'exec 2>&1' >> run
   if [ "$work_dir" != "" ]; then
     echo "cd '"$work_dir"'" >> run
@@ -194,4 +195,7 @@ create_service() {
 
   sv-enable "$svc_name"
   sv up "$svc_name"
+
+  cd "$work_dir"
+  # 可能需要重启设备
 }
